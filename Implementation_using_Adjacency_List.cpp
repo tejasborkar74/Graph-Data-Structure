@@ -21,10 +21,10 @@ public:
 
     void printGraph()
     {
-        for(int i : adjList)
+        for(auto i : adjList)
         {
-            cout<<i.first()<<"-->";
-            for(int neig : adjList[i])
+            cout<<i.first<<"-->";
+            for(int neig : i.second)
             {
                 cout<<neig<<" ,";
             }

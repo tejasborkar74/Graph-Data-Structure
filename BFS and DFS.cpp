@@ -56,6 +56,28 @@ public:
         }
     }
 
+    void dfshelper(int node , map<int,bool> &visited)
+    {
+        visited[node]=true;
+
+        cout<<node<<" ";
+
+        for(int neigh : adjList[node])
+        {
+            if(!visited[neigh])
+            {
+                dfshelper(neigh,visited);
+            }
+        }
+    }
+
+    void DFS(int src)
+    {
+        map<int,bool> visited;
+
+        dfshelper(src,visited);
+    }
+
 };
 int main()
 {
@@ -69,6 +91,8 @@ int main()
     g.addEdge(2,3);
     g.addEdge(2,1);
 
-    g.BFS(0);
+    //g.BFS(0);
+
+    g.DFS(4);
 
 }
