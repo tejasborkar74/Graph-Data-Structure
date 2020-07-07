@@ -76,6 +76,17 @@ public:
         map<int,bool> visited;
 
         dfshelper(src,visited);
+
+        for(auto i: adjList)
+        {
+            int temp = i.first;
+
+            if(!visited[temp])
+            {
+                dfshelper(temp,visited);
+            }
+        }
+
     }
 
 };
