@@ -1,3 +1,6 @@
+//TIme Complexity 0(VE)
+//and E id proportional to V^2 == O(v^3)
+
 #include <bits/stdc++.h>
 using namespace std;
 
