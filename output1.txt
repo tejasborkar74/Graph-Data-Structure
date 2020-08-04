@@ -1,5 +1,5 @@
-0 -- -1 with weight 0
-1 -- 0 with weight 1
-2 -- 4 with weight 2
-3 -- 4 with weight 1
-4 -- 0 with weight 1
+. t t t . 
+t $ $ $ t 
+t $ t $ t 
+t $ $ $ t 
+. t t t . 
