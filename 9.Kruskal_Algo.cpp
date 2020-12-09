@@ -1,7 +1,7 @@
 /*
 	* Used to find MST from Graph
 	* Greedy Algo
-	* For Udirected and weighted graph
+	* For Undirected and weighted graph
 	* STEPS
 		1. Find the edge of min weight
 		2. Insert this edge for MST if and only if after inserting there is

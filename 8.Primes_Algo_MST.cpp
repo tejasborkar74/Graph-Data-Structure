@@ -1,3 +1,16 @@
+/*
+	* Used to find MST for Connected , undirected , weighted Graph
+	* Greedy Algo
+	* Work on Vertives (Khuscals works on edges)
+	* STEPS
+		1. Choose src node
+		2. Assign 0 to src and INT_MAX to others
+		3. Assgin Parent of src = -1 and other parent[i] = i
+		4. We have visited , parent , weight map
+		5. Traverse all neigh of src
+		6. Check for any neigh visited , if visited we will not consider it.
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
