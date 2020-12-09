@@ -1,3 +1,12 @@
+/*
+	* Used to find MST from
+	* Greedy Algo
+	* For Udirected and weighted graph
+	* STEPS
+		1. Find the edge of min weight
+		2. Insert this edge for MST if and only if after inserting there is
+		   no cycles forms in the Graph
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
