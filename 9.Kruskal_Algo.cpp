@@ -1,5 +1,5 @@
 /*
-	* Used to find MST from
+	* Used to find MST from Graph
 	* Greedy Algo
 	* For Udirected and weighted graph
 	* STEPS
