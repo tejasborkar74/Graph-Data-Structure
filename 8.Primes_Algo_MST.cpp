@@ -46,12 +46,14 @@ public:
 			weight[i] = INT_MAX;
 		}
 
+		//start with 0 vertex
+
 		parent[0] = -1;
 		weight[0] = 0;
 
 
 
-		for (int i = 0; i < v; i++)
+		for (int i = 0; i < v; i++)//select v-1 edges
 		{
 			int minVertex = findMinVertex(weight, visited);
 
@@ -70,11 +72,13 @@ public:
 			}
 		}
 
-		//cout << "sad";
+		//cout << v << endl;
 
-		for (int i = 0; i < v; i++)
+
+
+		for (int i = 1; i < v; i++)
 		{
-			cout << i << " -- " << parent[i] << " with weight " << weight[i] << endl;
+			cout << i << " --> " << parent[i] << " with weight " << weight[i] << endl;
 		}
 
 	}

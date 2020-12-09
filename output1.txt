@@ -1,5 +1,8 @@
-. t t t . 
-t $ $ $ t 
-t $ t $ t 
-t $ $ $ t 
-. t t t . 
+7
+0 --> -1 with weight 0
+1 --> 4 with weight 2
+2 --> 1 with weight 6
+3 --> 0 with weight 3
+4 --> 3 with weight 4
+5 --> 2 with weight 2
+6 --> 2 with weight 1
