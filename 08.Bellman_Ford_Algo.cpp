@@ -1,5 +1,15 @@
-//TIme Complexity 0(VE)
-//and E id proportional to V^2 == O(v^3)
+/*
+TIme Complexity 0(VE)
+and E id proportional to V^2 == O(v^3)
+
+The Bellman-Ford algorithm is used to find the shortest paths from a single source node to all other nodes in a weighted graph, even when the graph contains negative edge weights.
+
+🔍 When to use Bellman-Ford instead of Dijkstra?
+    If the graph has negative weight edges
+    If you want to detect negative weight cycles
+    If the graph is sparse (low number of edges compared to nodes)
+*/
+
 
 #include <bits/stdc++.h>
 using namespace std;
