@@ -1,126 +1,47 @@
 /*
-	* Used to find MST for Connected , undirected , weighted Graph
-	* Greedy Algo
-	* Work on Vertives (Khuscals works on edges)
-	* STEPS
-		1. Choose src node
-		2. Assign 0 to src and INT_MAX to others
-		3. Assgin Parent of src = -1 and other parent[i] = i
-		4. We have visited , parent , weight map
-		5. Traverse all neigh of src
-		6. Check for any neigh visited , if visited we will not consider it.
+	* this return the wight of the MST
+	* O(E LogV)
+ 	* STEPS:
+		1. min priority_queue (weight)
+  		2. push {0, src}
+    		3. while !q.empty()
+      		4. if top element is visited => continue 
+		5. if not visited => add it in ans
+  			a. iterate all the neigh and push the {wt, neigh}
+ 
 */
-
-#include<bits/stdc++.h>
-using namespace std;
-#define ll long long
-
-class graph
-{
-public:
-	int v;
-	list<pair<int, int> >  *adjList ; //for storing adj ele and weight
-
-	graph(int v)
-	{
-		this->v = v;
-		adjList = new list<pair<int, int> > [v];
-	}
-
-	void addEdge(int u, int v, int w)
-	{
-		adjList[u].push_back(make_pair(v, w));
-		adjList[v].push_back(make_pair(u, w));
-	}
-
-	int findMinVertex(int *weight , bool * visited)
-	{
-		int minVertex = -1;
-
-		for (int i = 0; i < v; i++)
-		{
-			if (!visited[i] && (minVertex == -1 || weight[i] < weight[minVertex]))
-			{
-				minVertex = i;
-			}
-		}
-
-		return minVertex;
-	}
-	void Prims()
-	{
-		bool *visited = new bool[v];
-		int *parent = new int [v];
-		int *weight = new int[v];
-
-		for (int i = 0; i < v; i++)
-		{
-			visited[i] = false;
-			weight[i] = INT_MAX;
-		}
-
-		//start with 0 vertex
-
-		parent[0] = -1;
-		weight[0] = 0;
-
-
-
-		for (int i = 0; i < v; i++)//select v-1 edges
-		{
-			int minVertex = findMinVertex(weight, visited);
-
-			visited[minVertex] = true;
-
-			for (auto neigh : adjList[minVertex])
-			{
-				if (!visited[neigh.first])
-				{
-					if (weight[neigh.first] > neigh.second)
-					{
-						parent[neigh.first] = minVertex;
-						weight[neigh.first] = neigh.second;
-					}
-				}
-			}
-		}
-
-		//cout << v << endl;
-
-
-
-		for (int i = 1; i < v; i++)
-		{
-			cout << i << " --> " << parent[i] << " with weight " << weight[i] << endl;
-		}
-
-	}
-};
-
-int main()
-{
-#ifndef ONLINE_JUDGE
-	freopen("input1.txt" , "r" , stdin);
-	freopen("output1.txt" , "w" , stdout);
-#endif
-
-
-	int v, e;
-	cin >> v >> e;
-
-	//cout << "Asd";
-
-	graph g(v);
-
-	for (int i = 0; i < e; i++)
-	{
-		int u, v, w;
-		cin >> u >> v >> w;
-
-		g.addEdge(u, v, w);
-
-	}
-
-	g.Prims();
-
-}
+int spanningTree(int v, vector<vector<int>> adj[]) {
+        
+        vector<bool> visited(v, false);
+        priority_queue<pair<int,int>, vector<pair<int, int>>, greater<pair<int,int>> > q;
+        
+        // wt, node
+        q.push({0, 0});
+        
+        int ans = 0;
+        
+        while(!q.empty()) {
+            auto f = q.top();
+            q.pop();
+            int node = f.second;
+            int wt = f.first;
+            
+            if(visited[node] == true)continue;
+            
+            // add it to MST
+            ans += wt;
+            
+            visited[node] = true;
+            for(auto it : adj[node]) {
+                int neigh = it[0];
+                int w = it[1];
+                
+                if(visited[neigh] == false) {
+                    q.push({w, neigh});
+                }
+            }
+        }
+        
+        return ans;
+        
+    }
