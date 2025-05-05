@@ -2,6 +2,7 @@
 	* Used to find MST from Graph
 	* Greedy Algo
 	* For Undirected and weighted graph
+ 	* O(ElogE)
 	* STEPS
 		1. Find the edge of min weight
 		2. Insert this edge for MST if and only if after inserting there is
@@ -26,9 +27,10 @@ bool compare(Edge e1 , Edge e2)
 
 int findparent(int v , int *parent)
 {
-	if (parent[v] == v)return v;
-
-	return findparent(parent[v] , parent);
+	// path compression
+	if (parent[v] != v) parent[v] = findparent(parent[v] , parent);
+		
+	return parent[v];
 }
 
 void kruskal(Edge *input , int  v , int  e)
