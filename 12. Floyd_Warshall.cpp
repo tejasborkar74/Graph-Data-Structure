@@ -1,4 +1,4 @@
-// Find all pair shortest path
+// Find all pair shortest path (for both Directed and Undirected)
 // Also check -ve weight cycle => after complete ans if d[i][i] < 0 => -ve weight cycle
 // Time Complexity O(v^3)
 // Space Complexity O(v^2)
