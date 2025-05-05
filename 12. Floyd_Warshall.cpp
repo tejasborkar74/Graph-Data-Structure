@@ -1,7 +1,13 @@
-// Find all pair shortest path (for both Directed and Undirected)
-// Also check -ve weight cycle => after complete ans if d[i][i] < 0 => -ve weight cycle
-// Time Complexity O(v^3)
-// Space Complexity O(v^2)
+/* 
+    Find all pair shortest path (for both Directed and Undirected)
+    Also check -ve weight cycle => after complete ans if d[i][i] < 0 => -ve weight cycle
+    Time Complexity O(v^3)
+    Space Complexity O(v^2)
+
+    Algo: 
+        1. DP approach, we will find the path from i->j, via k => i->k->j
+        2. For all k
+*/ 
 
 #include <bits/stdc++.h>
 using namespace std;
