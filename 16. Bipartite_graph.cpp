@@ -25,6 +25,7 @@
 
     CODE : 
     Do bfs level wise and color the nodes 0,1 alternate levels
+    instead of taking vis array to track nodes, take color array (-1 default), 0 1 color
 */
 #include <bits/stdc++.h>0
 using namespace std;
