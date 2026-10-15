@@ -1,6 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+If you want to find out cycle is present or not in the directed graph using BFS
+then Apply topological sort (khans algo)
+
+Reason: Since we know topological sort can only be applied in DAG 
+so if cycle is present then it will fail -> fail meaning -> do not produce topo sort of v vertices
+*/
+
 class graph
 {
     map<int,list<int> > adjList;
